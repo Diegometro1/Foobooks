@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/book/war-and-peace',  function(){
+    return 'you want to view the book war and peace';
+
+});
+
+
+Route::get('/example', function () {
+    return view('abc');
+});
+
+
+
