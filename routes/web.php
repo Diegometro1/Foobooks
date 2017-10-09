@@ -20,7 +20,7 @@
 #Route::view('/' , 'welcome');
 
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController');
 
 
 Route::get('/example', function () {

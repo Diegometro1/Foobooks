@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller
 {
 
-    public function index(){
+    public function __invoke(){
 
-        return view('Welcome');
+        return view('welcome');
 
     }
 
