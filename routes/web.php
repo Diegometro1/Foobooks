@@ -11,12 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+//another way
+#Route::view('/' , 'welcome');
+
+
+Route::get('/', 'WelcomeController@index');
+
+
+Route::get('/example', function () {
+    return view('abc');
 });
 
 
-//Route::view('/' , 'welcome');
+Route::get('/examples', 'BookController@examples');
+
+
+
+Route::get('/book/', 'BookController@index');
+
+
+Route::get('/book/{title}', 'BookController@show');
+
+
 
 
 /*
@@ -29,22 +50,15 @@ Route::get('/book/war-and-peace',  function(){
 
 //route parameters
 
-Route::get('/book/{title?}', function($title = ''){
-
-    if($title == ' '){
-        return 'you have to specify a book title';
-
-    }
-
-
-    return 'You are viewing war and peace' . $title;
-
-});
-
-
-
-
-Route::get('/example', function () {
-    return view('abc');
-});
+//Route::get('/book/{title?}', function($title = ''){
+//
+//    if($title == ' '){
+//        return 'you have to specify a book title';
+//
+//    }
+//
+//
+//    return 'You are viewing war and peace' . $title;
+//
+//});
 
