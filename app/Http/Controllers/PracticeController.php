@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Debugbar;
 use cebe\markdown\MarkdownExtra;
 
+
 class PracticeController extends Controller
 {
 
@@ -23,6 +24,7 @@ class PracticeController extends Controller
      */
     public function practice4()
     {
+
         Debugbar::info($_GET);
         Debugbar::info(['a' => 1, 'b' => 2, 'c' => 3]);
         Debugbar::error('Error!');
