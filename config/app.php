@@ -12,8 +12,9 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'name' => 'Foobooks',
 
-    'name' => env('APP_NAME', 'Laravel'),
+    #'name' => env('APP_NAME', 'Foobooks'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://foobooks.diegometro1.me'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +124,7 @@ return [
 
     'log' => env('APP_LOG', 'single'),
 
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'log_level' => 'debug',
 
     /*
     |--------------------------------------------------------------------------

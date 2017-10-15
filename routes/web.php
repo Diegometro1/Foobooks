@@ -20,6 +20,21 @@
 #Route::view('/' , 'welcome');
 
 
+Route::get('/.env', function(){
+    dump(config('app.name'));
+    dump(config('app.env'));
+    dump(config('app.debug'));
+    dump(config('app.url'));
+
+
+
+
+});
+
+Route::get('/practice/{n?}', 'PracticeController@index');
+
+
+
 Route::get('/', 'WelcomeController');
 
 
@@ -61,4 +76,3 @@ Route::get('/book/war-and-peace',  function(){
 //    return 'You are viewing war and peace' . $title;
 //
 //});
-
