@@ -5,10 +5,111 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Debugbar;
 use cebe\markdown\MarkdownExtra;
-
+use App\Book;
 
 class PracticeController extends Controller
 {
+
+
+    public function practice10()
+    {
+
+        $book = Book::find(11);
+
+        if(!$book) {
+
+            dump('Did not delete book 11, did not find it. ');
+        }
+        else{
+            $book->delete();
+            dump('Deleted book #11');
+
+        }
+
+
+
+    }
+
+
+
+
+    public function practice9()
+    {
+
+        $book = Book::where('author', 'LIKE', '%Scott%')->first();
+
+        if(!$book) {
+            dump("Book not found, can't update.");
+
+        }
+        else{
+            #change some properties
+
+            $book->title = 'The really great Gatsby';
+            $book->published = '2025';
+
+            #save changes
+            $book->save();
+
+            dump('Update complete; check the database to confirm the update worked');
+
+        }
+
+    }
+
+
+
+
+
+
+
+    public function practice8()
+    {
+
+        $book = new Book();
+        $books = $book
+            ->where('title', 'LIKE', '%Harry Potter%')
+            ->orwhere('published', '>=', 1800)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        dump($books->toArray());
+
+    }
+
+
+
+
+    public function practice7()
+    {
+
+        $book = new Book();
+
+        $books = $book->all();
+
+        dump($books->toArray());
+
+    }
+
+
+    public function practice6()
+    {
+
+        $newBook = new Book();
+
+        $newBook->title = 'Harry Potter and the Sorcerer\'s Stone';
+        $newBook->author = 'J.K. Rowling';
+        $newBook->published = 1997;
+        $newBook->cover = 'http://prodimage.images-bn.com/pimages/9780590353427_p0_v1_s484x700.jpg';
+        $newBook->purchase_link = 'http://www.barnesandnoble.com/w/harry-potter-and-the-sorcerers-stone-j-k-rowling/1100036321?ean=9780590353427';
+
+        $newBook->save();
+
+        dump($newBook->toArray());
+
+    }
+
+
 
     /**
      *
